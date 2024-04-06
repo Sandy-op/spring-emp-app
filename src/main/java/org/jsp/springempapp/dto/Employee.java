@@ -80,4 +80,10 @@ public class Employee {
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", phone=" + phone + ", email=" + email + ", desg=" + desg
+				+ ", salary=" + salary + ", password=" + password + "]";
+	}
+
 }

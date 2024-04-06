@@ -26,27 +26,38 @@ public class EmployeeController {
 		System.out.println("10.Find Employees between a salary range");
 		switch (sc.nextInt()) {
 		case 1: {
-			System.out.println("Enter the name,phone,email,designation,salary and password to save Employee");
 			Employee employee = new Employee();
+			System.out.println("Enter employee name: ");
 			employee.setName(sc.next());
+			System.out.println("Enter employee phone no.:");
 			employee.setPhone(sc.nextLong());
+			System.out.println("Enter employee email: ");
 			employee.setEmail(sc.next());
+			System.out.println("Enter employee designation:");
 			employee.setDesg(sc.next());
+			System.out.println("Enter employee salary:");
 			employee.setSalary(sc.nextDouble());
+			System.out.println("Enter employee password:");
 			employee.setPassword(sc.next());
 			employee = employeeDao.saveEmployee(employee);
 			System.out.println("Employee saved with Id:" + employee.getId());
 			break;
 		}
 		case 2: {
-			System.out.println("Enter the id name,phone,email,designation,salary and password to update Employee");
 			Employee employee = new Employee();
+			System.out.println("Enter employee id:");
 			employee.setId(sc.nextInt());
+			System.out.println("Enter employee name: ");
 			employee.setName(sc.next());
+			System.out.println("Enter employee phone no.:");
 			employee.setPhone(sc.nextLong());
+			System.out.println("Enter employee email: ");
 			employee.setEmail(sc.next());
+			System.out.println("Enter employee designation:");
 			employee.setDesg(sc.next());
+			System.out.println("Enter employee salary:");
 			employee.setSalary(sc.nextDouble());
+			System.out.println("Enter employee password:");
 			employee.setPassword(sc.next());
 			employee = employeeDao.updateEmployee(employee);
 			if (employee != null)
@@ -73,7 +84,7 @@ public class EmployeeController {
 			String password = sc.next();
 			Employee employee = employeeDao.verifyEmployee(phone, password);
 			if (employee != null) {
-				System.out.println("Employee found");
+				System.out.println("Employee verification sucessfull");
 				System.out.println(employee);
 			} else {
 				System.err.println("Invalid Phone Number or Password");
@@ -86,7 +97,7 @@ public class EmployeeController {
 			String password = sc.next();
 			Employee employee = employeeDao.verifyEmployee(email, password);
 			if (employee != null) {
-				System.out.println("Employee found");
+				System.out.println("Employee verification sucessfull");
 				System.out.println(employee);
 			} else {
 				System.err.println("Invalid email Id or Password");
@@ -99,7 +110,7 @@ public class EmployeeController {
 			String password = sc.next();
 			Employee employee = employeeDao.verifyEmployee(id, password);
 			if (employee != null) {
-				System.out.println("Employee found");
+				System.out.println("Employee verification sucessfull");
 				System.out.println(employee);
 			} else {
 				System.err.println("Invalid Employee Id or Password");
