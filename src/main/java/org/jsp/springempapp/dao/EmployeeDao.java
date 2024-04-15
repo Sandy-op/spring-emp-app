@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 public class EmployeeDao {
 	@Autowired
 	private EntityManager entityManager;
-	
+
 	public Employee saveEmployee(Employee employee) {
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityManager.persist(employee);
